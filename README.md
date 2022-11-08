@@ -19,7 +19,7 @@ File or Folder | Purpose
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 - Start adding content, for example, a [db/schema.cds](db/schema.cds).
 
-## Project - 1: My Book Shop
+## Project - 1: iBookShop
 - Here we are enhancing the book shop Fiori user experience 
 
 ## Learn More
