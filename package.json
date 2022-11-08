@@ -41,6 +41,12 @@
     "rules": {
       "no-console": "off",
       "require-atomic-updates": "off"
+    },
+    "cds": {
+      "features": {
+        "fiori_preview": true,
+        "mocked_bindings": true
+      }
     }
   }
 }
