@@ -2,6 +2,6 @@
 - Here we are enhancing the book shop Fiori user experience 
 
 - Output
-- ![Start page](assets/BookCatalogUIMaster.png)
-- ![Start page](assets/BookCatalogUIDetail.png)
+![BookCatalog Overview](././assert/BookCatalogUIMaster.png)
+![BookCatalog DetailPage](././assets/BookCatalogUIDetail.png)
 
