@@ -5,5 +5,5 @@
 
 ![BookCatalog Overview](././assert/BookCatalogUIMaster.png)
 
-![BookCatalog DetailPage](././asset/BookCatalogUIDetail.png)
+![BookCatalog DetailPage](././assert/BookCatalogUIDetail.png)
 
