@@ -19,12 +19,14 @@ module.exports = (srv) => {
   srv.after ('READ', 'Books', each => {
 
     //Book price with discount 
-    const discount = (each.price >= 1000) ? 10 : 0;
+    const discount = (each.price >= 100) ? 10 : 0;
     if(discount>0){
-      each.price = each.price - (each.price / discount);
+      each.price_with_curr = each.price - (each.price / discount);
+    }else{
+      each.price_with_curr = each.price; 
     }
 
-    each.price_with_curr =  each.price + ' ' + each.currency_code + ' with ' + discount + '% discount'
+    each.price_with_curr += ' ' + each.currency_code + ' with ' + discount + '% discount'
   })
 
 }
