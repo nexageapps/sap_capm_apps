@@ -1,6 +1,8 @@
 ID;title;author_ID;stock;price;currency_code
-201;Wuthering Heights;101;12;499;INR
-207;Jane Eyre;107;11;999;INR
-251;The Raven;150;333;899;NZD
-252;Eleonora;150;555;487;NZD
-271;Catweazle;170;22;991;SGD 
+1001;400 days;001;12;499;INR
+1002;One up on wall street;002;11;20;NZD
+1003;Ponniyan Selvan;003;333;35;NZD
+1004;How to talk to anyone;004;555;777;INR
+1005;Good girl guide to murder;005;22;099;INR 
+1006;Atomic Habits;006;10;49;NZD
+1007;A girl at the room 105;001;09;100;INR

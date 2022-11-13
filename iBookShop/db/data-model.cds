@@ -2,7 +2,7 @@ namespace my.bookshop;
 using { Country, managed } from '@sap/cds/common';
 
 entity Books {
-  key ID : Integer                @title : 'ID';   
+  key ID : UUID                   @title : 'ID';   
   title  : localized String       @title : 'Title'; 
   author : Association to Authors @title : 'Author Name';
   stock  : Integer                @title : 'Stock proce';
@@ -11,14 +11,17 @@ entity Books {
 }
 
 entity Authors {
-  key ID : Integer;
-  name   : String                 @title: 'Author Name';
+  key ID : UUID                   @title : 'Authod ID';
+  name   : String                 @title:  'Author Name';
   books  : Association to many Books on books.author = $self;
+  age    : Integer                @title : 'Age';
+  activeyear : String             @title : 'Active year';
+  alive : String(1);
 }
 
-entity Orders : managed {
-  key ID  : UUID;
-  book    : Association to Books;
-  country : Country;
-  amount  : Integer;
+entity Orders {
+  key ID  : UUID                  @title : 'ID';
+  book    : Association to Books  @title : 'Book';
+  qty     : Integer               @title : 'Quantity';
+  amount  : Integer               @title : 'Amount';
 }
