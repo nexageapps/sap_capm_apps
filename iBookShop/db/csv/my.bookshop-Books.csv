@@ -1,7 +1,7 @@
-ID;title;author_ID;stock;price;currency_code
-1001;400 days;001;12;499;INR
-1002;One up on wall street;002;11;899;INR
-1003;Ponniyan Selvan;003;333;999;NZD
-1004;How to talk to anyone;004;555;777;SGD
-1005;Good girl guide to murder;005;22;099;INR 
-1006;A girl in the room 105;001;12;399;INR
+ID;title;author_ID;stock;price;currency_code;genres
+1001;400 days;001;12;499;INR;Crime Thriller
+1002;One up on wall street;002;11;899;INR;Finance
+1003;Ponniyan Selvan;003;333;999;NZD;Action
+1004;How to talk to anyone;004;555;777;SGD;Self Development
+1005;Good girl guide to murder;005;22;099;INR ;Crime Thriller
+1006;A girl in the room 105;001;12;399;INR;Crime Thriller

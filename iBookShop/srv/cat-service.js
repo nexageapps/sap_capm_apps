@@ -15,9 +15,16 @@ module.exports = (srv) => {
     if (affectedRows === 0)  req.error (409, "Sold out, sorry")
   })
 
-  // Add some discount for overstocked books
+  // LifeHook: Concat two values after it has rendered 
   srv.after ('READ', 'Books', each => {
-    if (each.stock > 111)  each.title += ' -- 11% discount!'
+
+    //Book price with discount 
+    const discount = (each.price >= 1000) ? 10 : 0;
+    if(discount>0){
+      each.price = each.price - (each.price / discount);
+    }
+
+    each.price_with_curr =  each.price + ' ' + each.currency_code + ' with ' + discount + '% discount'
   })
 
 }

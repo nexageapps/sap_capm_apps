@@ -14,14 +14,14 @@ annotate CatalogService.Books with @(
             Title: { Value: ID },
             Description: { Value: title }
         },
+        
         SelectionFields: [ ID, title, author.name ],
         LineItem: [
         
             { Value: ID },
             { Value: title },
-            { Value: author.name },
-            { Value: price },
-            { Value: currency_code }               
+            { Value: author.name },  
+            { Value: genres}            
         ],
         Facets: [
             {
@@ -30,21 +30,25 @@ annotate CatalogService.Books with @(
                 Facets: [
                     {$Type: 'UI.ReferenceFacet', Target: '@UI.FieldGroup#Main', Label: 'Main Facet'},
                     {$Type: 'UI.ReferenceFacet', Target: '@UI.FieldGroup#AuthorDetails', Label: 'Author Facet'}
-                ]
+                ] 
             }
         ],        
         FieldGroup#Main: {
             Data: [
                 { Value: ID , Label : 'Book ID'},
                 { Value: title },
-                { Value: price },
-                { Value: currency_code }               
+                { Value: price_with_curr , ![@UI.Importance] , Label : 'Discounted price'}, //Emphasized 
+                { Value: price , Label : 'Original price'},
+                { Value: currency_code },  
+            
+             
             ]
         },
         FieldGroup#AuthorDetails: {
             Data: [
                 { Value: author.name },
-                { Value: author.age }             
+                { Value: author.age },
+                { Value: author.alive, ![@UI.Hidden]} //Hide from UI        
             ]
         }
     }
@@ -89,6 +93,8 @@ annotate CatalogService.Authors with @(
             ]
             
         },
+
+        //Sorting the records in table 
         PresentationVariant : {
             SortOrder : [
                 {

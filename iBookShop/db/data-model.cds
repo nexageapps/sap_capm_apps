@@ -8,6 +8,8 @@ entity Books {
   stock  : Integer                @title : 'Stock proce';
   price  : Integer                @title : 'Price';
   currency_code : String          @title : 'Currency';
+  genres  : String                @title : 'Genure';
+  price_with_curr : String        @title : 'Price with Curr'
 } 
 
 entity Authors {
