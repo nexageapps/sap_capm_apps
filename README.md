@@ -1,7 +1,7 @@
 # Getting Started
 
-Welcome to your SAP CAP project. Here I have enhanced the existing sample projects from SAP CAP 
-These enhancement will assist developers to refer all key concepts for SAP CAP in one nutshell. 
+Welcome to your SAP CAP enhancements. Here I have enhanced the existing sample projects from SAP CAP 
+These enhancements will assist developers to refer all key concepts for SAP CAP in one nutshell. 
 
 ## Developer: Karthik Arjun 
 
