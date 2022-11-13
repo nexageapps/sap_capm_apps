@@ -19,7 +19,7 @@ File or Folder | Purpose
 
 - Output
 
-![BookCatalog Overview](././assert/BookCatalogUIMaster.png)
+![BookCatalog Overview](././assert/BookCatalogUIMasterE1.png)
 
-![BookCatalog DetailPage](././assert/BookCatalogUIDetail.png)
+![BookCatalog DetailPage](././assert/BookCatalogUIDetailE2.png)
 
