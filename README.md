@@ -1,26 +1,18 @@
 # Getting Started
 
-Welcome to your SAP CAP project.
+Welcome to your SAP CAP project. Here I have enhanced the existing sample projects from SAP CAP 
+These enhancement will assist developers to refer all key concepts for SAP CAP in one nutshell. 
 
-It contains these folders and files, following our recommended project layout:
+## Developer: Karthik Arjun 
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here 
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide 
-
-
-## Next Steps
-
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+https://www.linkedin.com/in/karthik-arjun-a5b4a258/
 
 ## Project - 1: iBookShop
 - Here we are enhancing the book shop Fiori user experience 
+- Enabled Fiori preview to visualize the content in responsive overview table 
+- Using Fiori detail page to navigate from table to landing page 
+- Implemented Sorting logic for tables 
+- Added custom labels and given associations between two entity sets 
 
 ## Learn More
 

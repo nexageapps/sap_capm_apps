@@ -16,6 +16,7 @@ annotate CatalogService.Books with @(
         },
         SelectionFields: [ ID, title, author.name ],
         LineItem: [
+        
             { Value: ID },
             { Value: title },
             { Value: author.name },
@@ -27,17 +28,23 @@ annotate CatalogService.Books with @(
                 $Type: 'UI.CollectionFacet',
                 Label: 'Book Info',
                 Facets: [
-                    {$Type: 'UI.ReferenceFacet', Target: '@UI.FieldGroup#Main', Label: 'Main Facet'}
+                    {$Type: 'UI.ReferenceFacet', Target: '@UI.FieldGroup#Main', Label: 'Main Facet'},
+                    {$Type: 'UI.ReferenceFacet', Target: '@UI.FieldGroup#AuthorDetails', Label: 'Author Facet'}
                 ]
             }
         ],        
         FieldGroup#Main: {
             Data: [
-                { Value: ID },
+                { Value: ID , Label : 'Book ID'},
                 { Value: title },
-                { Value: author_ID },
                 { Value: price },
                 { Value: currency_code }               
+            ]
+        },
+        FieldGroup#AuthorDetails: {
+            Data: [
+                { Value: author.name },
+                { Value: author.age }             
             ]
         }
     }
@@ -85,7 +92,7 @@ annotate CatalogService.Authors with @(
         PresentationVariant : {
             SortOrder : [
                 {
-                    Property : ID,
+                    Property : ID, 
                     Descending : true
                 }
             ],
