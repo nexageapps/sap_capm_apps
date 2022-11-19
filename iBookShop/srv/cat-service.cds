@@ -3,7 +3,7 @@ using my.bookshop as my from '../db/data-model';
 service CatalogService {
   entity Books @readonly as projection on my.Books;
   entity Authors @readonly as projection on my.Authors;
-  entity Orders @insertonly as projection on my.Orders;
+  entity Orders  as projection on my.Orders;
 }
 //Create UI to Book application - Read only
 annotate CatalogService.Books with @(   
@@ -15,14 +15,32 @@ annotate CatalogService.Books with @(
             Description: { Value: title }
         },
         
-        SelectionFields: [ ID, title, author.name ],
-        LineItem: [
-        
-            { Value: ID },
-            { Value: title },
-            { Value: author.name },  
-            { Value: genres}            
-        ],
+
+        SelectionFields: [ title , author.name ],
+        LineItem: {
+            $value: [
+                
+                { Value: ID , 
+                    Criticality : uiStockStatus, //Dynamic code for criticality i.e based on stock quantity 
+                    ![@HTML5.CssDefaults] : { //Adjust the column width 
+                        $Type : 'HTML5.CssDefaultsType',
+                        width : '5rem'
+                }
+                },
+                { Value: title , ![@UI.Importance] : #High},  
+                //Importance helps to visualize the table content with priority. 
+                //i.e Mobile screen shows Book title and Author name at the first page
+                { Value: author.name , ![@UI.Importance] : #High},  
+                { Value: genres},
+                { Value: stock , 
+                    Criticality : uiStockStatus, //Dynamic code for criticality i.e based on stock quantity 
+                     CriticalityRepresentation : #WithoutIcon,
+                    ![@HTML5.CssDefaults] : { //Adjust the column width 
+                            $Type : 'HTML5.CssDefaultsType',
+                            width : '14.87rem'
+                    } }          
+            ]
+        },
         Facets: [
             {
                 $Type: 'UI.CollectionFacet',
@@ -39,6 +57,7 @@ annotate CatalogService.Books with @(
                 { Value: title },
                 { Value: price_with_curr , ![@UI.Importance] , Label : 'Discounted price'}, //Emphasized 
                 { Value: price , Label : 'Original price'},
+                { Value: stock},
                 { Value: currency_code },  
             
              

@@ -5,11 +5,12 @@ entity Books {
   key ID : String                 @title : 'ID';   
   title  : localized String       @title : 'Title'; 
   author : Association to Authors @title : 'Author Name';
-  stock  : Integer                @title : 'Stock proce';
+  stock  : Integer                @title : 'Available Qty';
   price  : Integer                @title : 'Price';
   currency_code : String          @title : 'Currency';
   genres  : String                @title : 'Genure';
-  price_with_curr : String        @title : 'Price with Curr'
+  price_with_curr : String        @title : 'Price with Curr';
+  uiStockStatus : String ;
 } 
 
 entity Authors {
@@ -24,6 +25,6 @@ entity Authors {
 entity Orders {
   key ID  : UUID                  @title : 'ID';
   book    : Association to Books  @title : 'Book';
-  country : Country               @title : 'Country';
-  amount  : Integer               @title : 'Amount';
+  //country : Country               @title : 'Country';
+  qty  : Integer                  @title : 'Quantity';
 }
