@@ -14,6 +14,13 @@ https://www.linkedin.com/in/karthik-arjun-a5b4a258/
 - Implemented additional actions for tables 
 - Added custom labels and given associations between two entity sets 
 
+## Project - 2: CAP_Tutorial for SalesOrder application
+- Here we have referrend from the blog "SAP CAPM Full Stack UI5 Application with CRUD Operations"
+- It gives complete guide to create a SAP UI5 apps from SAP CAPM with VS studio 
+- CRUD operations have been integrated in this application 
+
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+Blog link: https://blogs.sap.com/2022/03/25/sap-capm-full-stack-ui5-application-with-crud-operations/
+
