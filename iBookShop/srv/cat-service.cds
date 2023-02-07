@@ -14,9 +14,16 @@ annotate CatalogService.Books with @(
             Title: { Value: ID },
             Description: { Value: title }
         },
-        
+
 
         SelectionFields: [ title , author.name ],
+        QuickViewFacets  : [ //Create Quick view UI for table
+                {
+                    $Type : 'UI.ReferenceFacet',
+                    Target : '@UI.FieldGroup#QuickView',
+                    Label : 'Age'
+                },
+        ],
         LineItem: {
             $value: [
                 
@@ -37,11 +44,12 @@ annotate CatalogService.Books with @(
                      CriticalityRepresentation : #WithoutIcon,
                     ![@HTML5.CssDefaults] : { //Adjust the column width 
                             $Type : 'HTML5.CssDefaultsType',
-                            width : '14.87rem'
+                            width : '100%'
                     } }          
             ]
         },
         Facets: [
+
             {
                 $Type: 'UI.CollectionFacet',
                 Label: 'Book Info',
@@ -53,7 +61,7 @@ annotate CatalogService.Books with @(
         ],        
         FieldGroup#Main: {
             Data: [
-                { Value: ID , Label : 'Book ID'},
+                { @Common.SemanticObject: 'QuickView', Value: ID , Label : 'Book ID' , $Type : 'UI.DataField'},
                 { Value: title },
                 { Value: price_with_curr , ![@UI.Importance] , Label : 'Discounted price'}, //Emphasized 
                 { Value: price , Label : 'Original price'},
@@ -73,6 +81,7 @@ annotate CatalogService.Books with @(
     }
 );
  
+
 
 //Create UI to Author application - Read only
 annotate CatalogService.Authors with @(   
@@ -125,5 +134,24 @@ annotate CatalogService.Authors with @(
                 '@UI.LineItem'
             ]
         }
+    }
+);
+
+
+annotate CatalogService.Authors with @(
+    UI.QuickViewFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Target : '@UI.FieldGroup#QuickViewPOC_FieldGroup_1'
+        }
+    ],
+    UI.FieldGroup #QuickViewPOC_FieldGroup_1 : {
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Label : 'Author Age',
+                Value : age
+            }
+        ]
     }
 );
