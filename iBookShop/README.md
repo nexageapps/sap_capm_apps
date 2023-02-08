@@ -19,7 +19,7 @@ File or Folder | Purpose
 
 ## Output
 
-![BookCatalog Overview](././assert/Master.png)
+![BookCatalog Overview](././assert/Master1.png)
 
 ![BookCatalog DetailPage](././assert/Detail.png)
 
