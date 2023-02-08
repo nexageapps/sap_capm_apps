@@ -17,9 +17,9 @@ File or Folder | Purpose
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 - Start adding content, for example, a [db/schema.cds](db/schema.cds).
 
-- Output
+## Output
 
-![BookCatalog Overview](././assert/BookCatalogUIMasterF1.png)
+![BookCatalog Overview](././assert/Master.png)
 
-![BookCatalog DetailPage](././assert/BookCatalogUIDetailE2.png)
+![BookCatalog DetailPage](././assert/Detail.png)
 
